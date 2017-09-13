@@ -50,10 +50,9 @@ public class EmailNotification extends Notification implements Cloneable{
         return result;
     }
 
-    public EmailNotification clone(EmailNotification point) throws CloneNotSupportedException {
-        if(!(point instanceof Cloneable)){
-            throw new CloneNotSupportedException("Invalid cloning");
-        }
-        return new EmailNotification(point.getBody(), point.getSubject(), point.getRecipient(), point.getSmtpProvider());
+    @Override
+    public Object clone() {
+
+        return new EmailNotification(getSubject(), getBody(), getRecipient(), getSmtpProvider() );
     }
 }
