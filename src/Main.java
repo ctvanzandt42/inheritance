@@ -5,7 +5,12 @@ public class Main {
 
         email.transport();
         text.transport();
-        System.out.println(email.status);
-        System.out.println(text.status);
+
+        System.out.println(email.showStatus());
+        System.out.println(text.showStatus());
+
+        email.showContent();
+
+        email.clone();
     }
 }
