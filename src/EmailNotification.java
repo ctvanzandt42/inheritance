@@ -6,7 +6,7 @@ public class EmailNotification extends Notification implements Cloneable{
         super(subject, body);
         this.recipient = recipient;
         this.smtpProvider = smtpProvider;
-        this.status = "email pending";
+        this.status = "email pending\n";
     }
 
     public String getRecipient() {
@@ -29,7 +29,7 @@ public class EmailNotification extends Notification implements Cloneable{
     @Override
     public void showContent() {
         super.showContent();
-        System.out.println("NOW I'M PUBLICCCCCCCC");
+        System.out.println("NOW I'M PUBLICCCCCCCC\n");
     }
 
     @Override
@@ -51,7 +51,7 @@ public class EmailNotification extends Notification implements Cloneable{
     }
 
     @Override
-    public Object clone() {
+    protected Object clone() {
 
         return new EmailNotification(getSubject(), getBody(), getRecipient(), getSmtpProvider() );
     }

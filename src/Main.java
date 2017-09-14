@@ -11,8 +11,7 @@ public class Main {
 
         email.showContent();
 
-        Notification emailClone = (EmailNotification) email.clone();
+        Notification emailClone = (EmailNotification) ((EmailNotification)email).clone();
         System.out.println("Checking if clone and original match: " + email.equals(emailClone));
-        emailClone.transport();
     }
 }

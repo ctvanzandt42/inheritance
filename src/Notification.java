@@ -1,6 +1,6 @@
 import java.time.LocalDateTime;
 
-public class Notification {
+public abstract class Notification {
     private LocalDateTime createdAt;
     private String subject;
     private String body;
@@ -10,7 +10,7 @@ public class Notification {
         this.createdAt = LocalDateTime.now();
         this.subject = subject;
         this.body = body;
-        this.status = "default";
+        this.status = "default\n";
     }
 
     public LocalDateTime getCreatedAt() {
@@ -29,9 +29,7 @@ public class Notification {
         return status;
     }
 
-    public void transport() throws NoTransportException {
-
-    }
+    public abstract void transport() throws NoTransportException;
 
     public String showStatus() {
         return status;
